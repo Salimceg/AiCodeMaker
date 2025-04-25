@@ -16,28 +16,49 @@ Docker
 
 🛠️ Kurulum ve Çalıştırma
 
-1. Projeyi Klonlayın
+🔁 Repoyu Klonla
 
-git clone <repo-link>
-cd Myproject.py
+git clone https://github.com/Salimceg/AiCodeMaker.git
+cd AiCodeMaker
 
-2. OpenAI API Key Ayarla
+🔐 OpenAI API Anahtarını Tanımla
 
-config.py içine aşağıdaki şekilde API anahtarını ekleyin:
+config.py dosyası oluştur:
 
-OPENAI_API_KEY = "sk-..."
+touch config.py
 
-3. Docker Build
+İçeriği şöyle olsun:
+
+OPENAI_API_KEY = "sk-..."  # Buraya kendi OpenAI API key'ini yaz
+
+🐳 Docker ile Çalıştırmak için
+
+1. Docker Image Oluştur
 
 docker build -t ai-kod-uretici .
 
-4. Docker Container Çalıştır
+2. Docker Container Başlat
 
 docker run -p 5050:5000 ai-kod-uretici
 
-5. Tarayıcıdan Eriş
+3. Tarayıcıdan Eriş
 
 http://localhost:5050
+
+🧪 Alternatif: Docker Olmadan Çalıştırma
+
+1. Sanal Ortam Oluştur
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+2. Gereken Kütüphaneleri Yükle
+
+pip install -r requirements.txt
+
+3. Uygulamayı Başlat
+
+python app.py
 
 🌍 Dockerfile Özeti
 
@@ -52,7 +73,7 @@ CMD ["python", "app.py"]
 
 Myproject.py/
 ├── app.py
-├── config.py
+├── config.py (repoya dahil değil)
 ├── requirements.txt
 ├── Dockerfile
 ├── templates/
@@ -77,3 +98,4 @@ Kullanıcıdan prompt almak için input alanına placeholder eklenebilir.
 📤 Lisans
 
 MIT
+
