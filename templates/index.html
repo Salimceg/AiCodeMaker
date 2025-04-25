@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Kod Üretici</title>
+</head>
+<body>
+    <h1>Yapay Zekâ Destekli Kod Üretici</h1>
+    <form method="POST" action="/generate">
+        <label for="prompt">Kod isteğinizi yazın:</label><br>
+        <textarea name="prompt" rows="5" cols="50"></textarea><br><br>
+        <input type="submit" value="Kod Üret">
+    </form>
+
+    {% if title %}
+        <h2>Başlık: {{ title }}</h2>
+        <pre><code>{{ code }}</code></pre>
+    {% endif %}
+</body>
+</html>
