@@ -1,5 +1,3 @@
-
-
 Yapay Zeka Destekli Kod Üretici
 -Bu proje, kullanıcının girdisiyle Python kodu ve başlık üreten bir Flask web uygulamasıdır. -Ollama yerel LLM kullanımı ile çalışır, ayrıca Docker container haline getirilmiştir.
 -Teknolojiler:
@@ -35,7 +33,8 @@ bash/ docker run -p 5050:5000 ai-kod-uretici
 http://localhost:5050
 Dockerfile Özeti
 FROM python:3-slim COPY requirements.txt . RUN python -m pip install -r requirements.txt WORKDIR /app COPY . /app CMD ["python", "app.py"]
-Dosya Yapısı
+Dosya Yapısı:
+----------------------
 OllamaCodeMakerr/
 * app.py
 * requirements.txt
@@ -43,5 +42,6 @@ OllamaCodeMakerr/
 * templates/
     * index.html
 (Opsiyonel: config.py dosyası oluşturulabilir, API anahtarı vs. için.)
+----------------------
 Olası Problemler
 -API bağlantı hatası: Ollama'nın arka planda çalışıp çalışmadığı kontrol edilmeli. -Port dolu hatası: lsof -i :5055 ve kill -9 PID komutları ile temizlenmeli. -Request modülü bulunamadı hatası: bash/ pip3 install requests -Docker veya Minikube üzerinde çalışırken ImagePull hatası alınırsa image build edilip tekrar deploy edilmeli.
